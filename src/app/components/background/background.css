@@ -1,0 +1,59 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: radial-gradient(ellipse at top, #080e21 0%, #1b2735 95%);
+}
+
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.meteor {
+  position: absolute;
+  width: 300px;
+  height: 2px; /* Increased from 1px to 2px for visibility */
+  transform: rotate(-45deg);
+  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+  animation: meteor linear infinite;
+}
+
+.meteor:before {
+  content: "";
+  position: absolute;
+  width: 6px; /* Increased from 4px to 6px */
+  height: 6px; /* Increased from 5px to 6px */
+  border-radius: 50%;
+  margin-top: -3px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px 4px #fff; /* Increased glow effect */
+}
+
+@keyframes meteor {
+  0% {
+    opacity: 1;
+    margin-top: -300px;
+    margin-right: -300px;
+  }
+  12% {
+    opacity: 0;
+  }
+  15% {
+    margin-top: 300px;
+    margin-left: -600px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
